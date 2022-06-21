@@ -1,10 +1,16 @@
 <template>
-  <h1>Home</h1>
+  <div>
+    <d-calendar/>
+  </div>
 </template>
 
 <script>
-export default {
+import DCalendar from '../components/DCalendar.vue'
 
+export default {
+  components: {
+    DCalendar
+  }
 }
 </script>
 
