@@ -13,7 +13,7 @@
 
 ### ✅ Application demo
 
-Vercel: [https://bt-current-price.vercel.app](https://calendar-vue.vercel.app/)
+Vercel: [https://calendar-vue.vercel.app/](https://calendar-vue.vercel.app/)
 
 #### 🏠 Home Page
 
