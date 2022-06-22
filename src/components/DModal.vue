@@ -7,24 +7,29 @@
     />
     <h1>Add Task</h1>
     <input type="text" v-model="task" />
-    <button>Add Task</button>
+    <button @click="addTask">Add Task</button>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
   data() {
     return {
       task: "",
     };
   },
+  computed: {
+...mapGetters(["newTask"])
+  },
   methods: {
     modalClose() {
       this.$store.commit("modalFalse");
     },
-    onDateClick(payload) {
-
-    }
+    addTask() {
+      this.$store.commit("newTask", this.task);
+      this.$store.commit("modalFalse");
+    },
   },
 };
 </script>
@@ -37,7 +42,7 @@ export default {
   height: 300px;
   background: rgb(222, 238, 234);
   z-index: 99;
-  bottom: 25%;
+  bottom: 20%;
   left: 40%;
 }
 

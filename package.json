@@ -19,7 +19,8 @@
     "@fullcalendar/vue3": "^5.11.1",
     "vue": "^3.2.25",
     "vue-router": "4",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "date-fns": "^2.14.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
