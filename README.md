@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <a href="">🔗 Calendar </a>
+    <a href="https://calendar-vue.vercel.app/">🔗 Calendar </a>
 </h1>
 <p align="center">🚀 Application that you can create new events on specific dates, view description and delete the event.</p>
 
@@ -13,7 +13,7 @@
 
 ### ✅ Application demo
 
-Vercel: [https://bt-current-price.vercel.app](https://bt-current-price.vercel.app)
+Vercel: [https://bt-current-price.vercel.app](https://calendar-vue.vercel.app/)
 
 #### 🏠 Home Page
 
