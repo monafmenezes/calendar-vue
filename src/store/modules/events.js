@@ -1,28 +1,8 @@
 import { getEventIndexById } from '../../services/utils'
-import { addDays } from 'date-fns'
 
 export default {
   state: {
     events: [
-      {
-        id: 10,
-        title: 'All day event',
-        description: '',
-        date: new Date(),
-        allDay: true
-      },
-      {
-        id: 20,
-        title: 'Timed event',
-        description: '',
-        start: addDays(new Date(), 1)
-      },
-      {
-        id: 30,
-        title: 'Timed event',
-        description: '',
-        start: addDays(new Date(), 2)
-      }
     ],
     modalOpen: false,
     newTask: '',

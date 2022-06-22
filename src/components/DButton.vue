@@ -14,7 +14,7 @@ export default {};
   color: #ffffff;
   border: none;
   border-radius: 2px;
-  width: 3rem;
+  width: 3.5rem;
   height: 2rem;
   margin-left: 1rem;
   cursor: pointer;
