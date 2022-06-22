@@ -21,8 +21,8 @@ Vercel: [https://calendar-vue.vercel.app/](https://calendar-vue.vercel.app/)
 ![Captura de tela de 2022-06-22 09-40-36](https://user-images.githubusercontent.com/85262397/175056997-59115a16-6dd8-47fa-beda-6d3bd5f2a5c8.png)
 ![Captura de tela de 2022-06-22 11-36-41](https://user-images.githubusercontent.com/85262397/175057084-f74c2a90-2834-47f4-8a90-e8a724696b44.png)
 
-#### ✅ Description Page!
-[Captura de tela de 2022-06-22 11-36-15](https://user-images.githubusercontent.com/85262397/175057323-a74396ab-beba-48ee-a9fc-a66a90fdb143.png)
+#### ✅ Description Page
+![Captura de tela de 2022-06-22 11-36-15](https://user-images.githubusercontent.com/85262397/175057323-a74396ab-beba-48ee-a9fc-a66a90fdb143.png)
 
 ### ✅ Prerequisites and how to run the application/tests
 
