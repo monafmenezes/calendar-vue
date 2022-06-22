@@ -1,10 +1,12 @@
 <template>
-  <div class="calendar">
+  <div class="calendar container">
     <FullCalendar class="full-calendar" :options="config">
-      <template #eventContent="{ timeText, event }">
-        <b>{{ timeText }}</b>
-        <i>{{ event.title }}</i>
-      </template>
+      <router-link>
+        <template #eventContent="{ timeText, event }">
+          <b>{{ timeText }}</b>
+          <i>{{ event.title }}</i>
+        </template>
+      </router-link>
     </FullCalendar>
     <d-modal v-if="openModal" />
   </div>
@@ -19,7 +21,6 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import { mapGetters, mapActions } from "vuex";
 import DModal from "./DModal.vue";
-import { addDays } from 'date-fns'
 
 export default {
   components: { FullCalendar, DModal },
@@ -37,11 +38,7 @@ export default {
         selectable: true,
         selectMirror: true,
         dayMaxEvents: true,
-        events: [
-          { id: 10, title: "All day event", date: new Date(), allDay: true },
-          { id: 20, title: "Timed event", start: addDays(new Date(), 1) },
-          { id: 30, title: "Timed event", start: addDays(new Date(), 2) },
-        ],
+        events: this.$store.state.events.events,
         weekends: this.weekendsVisible,
       },
       eventHandlers: {
@@ -52,10 +49,6 @@ export default {
         select: this.onDateSelect,
       },
     };
-  },
-  mounted() {
-    console.log(this.events);
-    console.log(this.weekends);
   },
   computed: {
     ...mapGetters(["events", "newTask", "weekendsVisible"]),
@@ -81,6 +74,7 @@ export default {
     ]),
     onDateClick(payload) {
       const title = this.newTask;
+      const description = "";
 
       if (!title) {
         return;
@@ -92,6 +86,7 @@ export default {
       return this.createEvent({
         id,
         title,
+        description,
         date,
         start,
         end,
@@ -99,8 +94,8 @@ export default {
       });
     },
     onDateSelect(payload) {
-      this.$store.commit("modalFalse");
-      return this.onDateClick(payload);
+      this.onDateClick(payload);
+      this.$store.commit("newTask", "");
     },
     onEventClick({ event }) {
       const confirmed = confirm(
@@ -118,5 +113,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.container {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+}
 </style>

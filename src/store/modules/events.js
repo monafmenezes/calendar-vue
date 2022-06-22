@@ -4,23 +4,41 @@ import { addDays } from 'date-fns'
 export default {
   state: {
     events: [
-      { id: 10, title: 'All day event', date: new Date(), allDay: true },
-      { id: 20, title: 'Timed event', start: addDays(new Date(), 1) },
-      { id: 30, title: 'Timed event', start: addDays(new Date(), 2) }
+      {
+        id: 10,
+        title: 'All day event',
+        description: '',
+        date: new Date(),
+        allDay: true
+      },
+      {
+        id: 20,
+        title: 'Timed event',
+        description: '',
+        start: addDays(new Date(), 1)
+      },
+      {
+        id: 30,
+        title: 'Timed event',
+        description: '',
+        start: addDays(new Date(), 2)
+      }
     ],
     modalOpen: false,
     newTask: '',
     weekendsVisible: true,
+    description: ''
   },
   getters: {
     events: state => state.events,
     weekendsVisible: state => state.weekendsVisible,
     modalOpen: state => state.modalOpen,
-    newTask: state => state.newTask
+    newTask: state => state.newTask,
+    newDescription: state => state.description
   },
   mutations: {
     createEvent (state, event) {
-      return state.events.push(event)
+      state.events.push(event)
     },
     updateEvent (state, updatedEvent) {
       const index = getEventIndexById(state, updatedEvent.id)
@@ -54,6 +72,9 @@ export default {
     },
     newTask (state, payload) {
       state.newTask = payload
+    },
+    newDescription(state, payload) {
+      state.description = payload
     }
   },
   actions: {
@@ -74,6 +95,9 @@ export default {
     },
     newTask ({ commit }, payload) {
       return commit('newTask', payload)
+    },
+    newDescription ({ commit }, payload) {
+      return commit('newDescription', payload)
     }
   }
 }
