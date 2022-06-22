@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>Add Task</span>
+    <span>Add Event</span>
     <d-button @click="handleClick" class="handle">
       <font-awesome-icon
       icon="fa-solid fa-plus"

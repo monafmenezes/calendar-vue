@@ -5,7 +5,7 @@
       class="icon"
       @click="modalClose"
     />
-    <h1>Add Task</h1>
+    <h1>Add Event</h1>
     <span
       >Add a title and description. Then select the date on the calendar.</span
     >

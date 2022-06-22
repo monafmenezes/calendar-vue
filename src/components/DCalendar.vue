@@ -1,12 +1,10 @@
 <template>
   <div class="calendar container">
     <FullCalendar class="full-calendar" :options="config">
-      <router-link>
-        <template #eventContent="{ timeText, event }">
-          <b>{{ timeText }}</b>
-          <i>{{ event.title }}</i>
-        </template>
-      </router-link>
+      <template #eventContent="{ timeText, event }">
+        <b>{{ timeText }}</b>
+        <i>{{ event.title }}</i>
+      </template>
     </FullCalendar>
     <d-modal v-if="openModal" />
   </div>
@@ -51,7 +49,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["events", "newTask", "weekendsVisible"]),
+    ...mapGetters(["events", "newTask", "weekendsVisible", "newDescription"]),
 
     config() {
       return {
@@ -74,7 +72,7 @@ export default {
     ]),
     onDateClick(payload) {
       const title = this.newTask;
-      const description = "";
+      const description = this.newDescription;
 
       if (!title) {
         return;
@@ -98,13 +96,8 @@ export default {
       this.$store.commit("newTask", "");
     },
     onEventClick({ event }) {
-      const confirmed = confirm(
-        `Are you sure you want to delete the event '${event.title}'?`
-      );
-      if (!confirmed) {
-        return;
-      }
-      return this.deleteEvent(event.id);
+     this.$router.push({path: `/description/${event._def.publicId}`})
+
     },
     onEventDrop({ event }) {
       return this.updateEvent(event);
