@@ -60,6 +60,8 @@ The following tools were used in building the project:
 - [Vue.js](https://vuejs.org/guide/introduction.html)
 - [Vue-router](https://router.vuejs.org/installation.html)
 - [FullCalendar](https://fullcalendar.io/docs/vue)
+- [Vuex](https://vuex.vuejs.org/ptbr/)
+- [Fontawesome](https://fontawesome.com/)
 
 ### ✅ Autor
 <img style="border-radius: 50%;" src="https://github.com/monafmenezes.png" width="100px;" alt=""/>
