@@ -34,10 +34,10 @@ In addition it is good to have an editor to work with code like [VSCode](https:/
 
 ```bash
 # Clone this repository
-$ git clone <git@github.com:monafmenezes/bt-current-price.git>
+$ git clone <git@github.com:monafmenezes/calendar-vue.git>
 
 # Access the project folder in the terminal
-$ cd bt-current-price
+$ cd calendar-vue
 
 # Install dependencies
 $ yarn
